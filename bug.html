@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Error</title>
+</head>
+<body>
+  <div id="myDiv">
+    This text is visible.
+  </div>
+
+  <script>
+    //Incorrect use of innerHTML that leads to unexpected behavior
+    document.getElementById("myDiv").innerHTML += "<p>This paragraph is appended correctly.</p>"; //Correct
+    document.getElementById("myDiv").innerHTML = document.getElementById("myDiv").innerHTML + "<p>This paragraph might not render correctly</p>"; //Potentially Incorrect
+    //The above line attempts to append text using a method that can cause unexpected behavior or infinite loops depending on the structure of the HTML.
+  </script>
+</body>
+</html>
